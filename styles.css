@@ -211,3 +211,194 @@ img{max-width:100%}
   html{scroll-behavior:auto}
   .nav{transition:none}
 }
+
+/* =========================================================
+   Final visual refinement: readable desktop, balanced dark mode,
+   consistent logo and accessible disclosure controls.
+   ========================================================= */
+:root{
+  --paper:#faf7f3;--paper2:#f1e9e1;--ink:#302724;--muted:#70635d;
+  --rose:#b77d7c;--rose-dark:#895c5d;--line:#dfd4ca;--white:#fffdfa;
+  --surface:#fffdfa;--surface-soft:#f1e9e1;
+  --serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',Arial,sans-serif;
+}
+:root[data-theme="dark"]{
+  color-scheme:dark;
+  --paper:#211f1e;--paper2:#292624;--ink:#f5eee8;--muted:#c9bdb4;
+  --rose:#d6a09c;--rose-dark:#e4b9b2;--line:#49413d;--white:#302c29;
+  --surface:#302c29;--surface-soft:#39332f;
+}
+html{scroll-behavior:smooth}
+body{font-size:16px;background:var(--paper);color:var(--ink)}
+.brand{flex:0 1 350px;min-width:0;display:flex;align-items:center}
+.brand img{display:block;width:min(100%,340px);height:auto;max-height:76px;object-fit:contain;object-position:left center}
+.header{background:color-mix(in srgb,var(--paper) 95%,transparent);}
+.nav{font-size:13px;gap:clamp(20px,2.3vw,36px);color:var(--muted)}
+.nav-cta{font-size:12px;padding:13px 18px}
+.header-actions{display:flex;align-items:center;gap:12px}
+.menu-toggle{border:1px solid var(--line);background:var(--surface);border-radius:50%;width:42px;height:42px;align-items:center;justify-content:center;gap:5px;padding:9px;cursor:pointer}
+.menu-toggle i{display:block;width:18px;height:1.5px;background:var(--ink);border-radius:2px}
+.hero{min-height:690px}
+.hero-lead{font-size:22px;color:var(--ink)}
+.hero-text,.about-copy p,.section-heading>p,.approach-head>p,.credentials-intro>p{font-size:15px;line-height:1.9;color:var(--muted)}
+.eyebrow{font-size:10px}
+.button{font-size:13px;min-height:52px}
+.text-link,.underlined-link{font-size:13px}
+.hero-note{font-size:11px}
+.strip-label,.section-kicker{font-size:10px}
+.intro-strip p{font-size:23px}
+.about-copy h2,.section-heading h2,.approach-head h2,.credentials-intro h2,.contact-copy h2{font-size:clamp(42px,4.2vw,60px)}
+.image-label{font-size:11px}.image-label small{font-size:9px}
+.service-intro-banner h3{font-size:clamp(28px,2.4vw,36px)}
+.service-intro-banner p{font-size:14px;line-height:1.85}
+.category-header h3{font-size:27px}
+.category-header p{font-size:14px;line-height:1.75}
+.service-detail summary{font-size:15px;line-height:1.55;min-height:60px;padding:17px 0}
+.detail-content{gap:17px 24px;padding-bottom:20px}
+.detail-content h4{font-size:10px;letter-spacing:1px}
+.detail-content p{font-size:13px;line-height:1.8}
+.detail-content .evidence-note{font-size:11px;line-height:1.7;padding:13px 15px}
+.evidence-disclaimer strong{font-size:22px}
+.evidence-disclaimer p,.references>p{font-size:13px;line-height:1.8}
+.references h3{font-size:32px}
+.reference-links a{font-size:13px}
+.value h3{font-size:22px}.value p{font-size:13px;line-height:1.8}
+.timeline-entry h3{font-size:21px}.timeline-entry p{font-size:13px;line-height:1.75}
+.timeline-date{font-size:10px}
+.footer{font-size:13px}
+.footer-contact-links a{font-size:13px}
+/* The disclosure control is drawn with centered strokes, never a text glyph. */
+.service-detail summary{display:flex;align-items:center;justify-content:space-between}
+.detail-plus{position:relative;display:inline-flex;align-items:center;justify-content:center;flex:0 0 28px;width:28px;height:28px;margin-left:16px;border:1px solid var(--line);border-radius:50%;background:var(--surface);color:var(--rose-dark);font-size:0;line-height:1}
+.detail-plus::before,.detail-plus::after{content:"";position:absolute;left:50%;top:50%;width:10px;height:1.5px;background:currentColor;transform:translate(-50%,-50%);border-radius:2px}
+.detail-plus::after{transform:translate(-50%,-50%) rotate(90deg);transition:opacity .18s}
+.service-detail[open] .detail-plus::after{opacity:0}
+.service-detail[open] .detail-plus{background:var(--surface-soft)}
+/* Dark palette is deliberately warm and restrained; every large surface uses tokens. */
+:root[data-theme="dark"] body{background:var(--paper);color:var(--ink)}
+:root[data-theme="dark"] .topline{background:#171514;color:#e8ddd5}
+:root[data-theme="dark"] .topline a{color:#e7bdb5}
+:root[data-theme="dark"] .header{background:rgba(33,31,30,.96);border-color:var(--line)}
+:root[data-theme="dark"] .nav{color:var(--muted);background:var(--paper)}
+:root[data-theme="dark"] .nav-cta{color:var(--rose-dark);border-color:var(--rose)}
+:root[data-theme="dark"] .nav-cta:hover{background:var(--rose);color:#211f1e}
+:root[data-theme="dark"] .hero:before{border-color:#49413d}
+:root[data-theme="dark"] .hero-lead{color:var(--ink)}
+:root[data-theme="dark"] .hero-text,:root[data-theme="dark"] .about-copy p,:root[data-theme="dark"] .section-heading>p,:root[data-theme="dark"] .approach-head>p,:root[data-theme="dark"] .credentials-intro>p{color:var(--muted)}
+:root[data-theme="dark"] .hero-photo-wrap,:root[data-theme="dark"] .about-image-area img,:root[data-theme="dark"] .credentials-intro img{background:#39332f}
+:root[data-theme="dark"] .photo-caption,:root[data-theme="dark"] .image-label{background:#302c29;color:var(--ink)}
+:root[data-theme="dark"] .hero-stamp{background:#966d6b;color:#fff8f3}
+:root[data-theme="dark"] .intro-strip{background:#302c29;color:var(--ink)}
+:root[data-theme="dark"] .intro-strip p,:root[data-theme="dark"] .intro-strip em{color:var(--ink)}
+:root[data-theme="dark"] .specialties{background:#292624}
+:root[data-theme="dark"] .service-intro-banner{background:#302c29;border-color:var(--line)}
+:root[data-theme="dark"] .service-category{background:#302c29;border-color:var(--line)}
+:root[data-theme="dark"] .category-header p,:root[data-theme="dark"] .detail-content p{color:var(--muted)}
+:root[data-theme="dark"] .service-detail{border-color:var(--line)}
+:root[data-theme="dark"] .detail-content .evidence-note{background:#39332f;color:#d6c9bf}
+:root[data-theme="dark"] .evidence-disclaimer{background:#302c29;border-color:var(--line)}
+:root[data-theme="dark"] .reference-links a{color:var(--ink);border-color:var(--line)}
+:root[data-theme="dark"] .quote-band{background:#765657;color:#fff8f3}
+:root[data-theme="dark"] .credentials{background:#292624}
+:root[data-theme="dark"] .timeline-block,:root[data-theme="dark"] .timeline-entry:before{border-color:var(--line)}
+:root[data-theme="dark"] .timeline-entry p{color:var(--muted)}
+:root[data-theme="dark"] .contact-banner{background:#39312e}
+:root[data-theme="dark"] .contact-copy p,:root[data-theme="dark"] .footer p{color:#d4c7bd}
+:root[data-theme="dark"] .button-dark{background:#e4b9b2;color:#28211f}
+:root[data-theme="dark"] .button-dark:hover{background:#f0cbc3;color:#28211f}
+:root[data-theme="dark"] .button-light{background:#f5eee8;color:#302724}
+:root[data-theme="dark"] .whatsapp-float{background:#477a63;color:white}
+:root[data-theme="dark"] .brand img{filter:none}
+:root[data-theme="dark"] .theme-toggle{background:#302c29;border-color:var(--line);color:var(--ink)}
+:root[data-theme="dark"] .menu-toggle{background:#302c29;border-color:var(--line)}
+:root[data-theme="dark"] .footer{border-color:var(--line)}
+@media(min-width:1500px){
+  .hero{padding-left:12%;padding-right:12%;grid-template-columns:1.1fr .9fr;gap:9%}
+  .section{padding-left:12%;padding-right:12%}
+  .hero-text,.about-copy p,.section-heading>p,.approach-head>p{font-size:16px}
+  .detail-content p{font-size:14px}
+}
+@media(max-width:1100px){
+  .header{padding-left:5%;padding-right:5%}
+  .brand{flex-basis:270px}
+  .brand img{width:270px}
+  .nav{gap:16px;font-size:12px}
+  .nav-cta{padding:11px 13px}
+}
+@media(max-width:760px){
+  .topline{padding:6px 5%;font-size:8px;letter-spacing:1px}
+  .topline a{font-size:8px}
+  .header{height:76px;padding:0 5%;gap:10px}
+  .brand{flex:1 1 auto;max-width:calc(100% - 100px)}
+  .brand img{width:100%;max-width:260px;max-height:62px}
+  .header-actions{gap:7px}
+  .theme-toggle{width:40px;height:40px;justify-content:center;padding:0}
+  .theme-label{display:none}
+  .menu-toggle{display:flex;width:40px;height:40px}
+  .nav{display:flex;visibility:hidden;opacity:0;pointer-events:none;position:absolute;top:75px;left:0;right:0;z-index:23;padding:12px 6% 22px;gap:0;flex-direction:column;align-items:stretch;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 18px 25px rgba(48,39,36,.12);transform:translateY(-8px);transition:opacity .18s,transform .18s,visibility .18s}
+  .nav.open{visibility:visible;opacity:1;pointer-events:auto;transform:translateY(0)}
+  .nav>a{padding:14px 4px;border-bottom:1px solid var(--line);font-size:14px}
+  .nav .nav-cta{margin-top:13px;text-align:center;padding:14px}
+  .hero{min-height:0;padding:54px 6% 64px;grid-template-columns:1fr;gap:35px}
+  .hero h1{font-size:clamp(44px,11vw,60px)}
+  .hero-lead{font-size:20px}
+  .hero-text,.about-copy p{font-size:14px}
+  .hero-actions{align-items:flex-start;flex-direction:column;gap:16px}
+  .button{width:100%;max-width:350px;min-height:50px;font-size:13px}
+  .hero-note{font-size:10px;flex-wrap:wrap;margin-top:30px}
+  .hero-visual{width:90%;max-width:400px;margin:0 auto;padding:0 17px 20px 0}
+  .hero-photo-wrap{height:clamp(320px,105vw,460px)}
+  .photo-caption{left:-14px;font-size:13px;padding:13px 16px}
+  .hero-stamp{width:78px;height:78px;right:-10px;font-size:7px}
+  .intro-strip{display:grid;grid-template-columns:1fr auto;padding:26px 6%;gap:9px 14px}
+  .strip-label{grid-column:1/-1;white-space:normal}
+  .intro-strip p{font-size:19px;line-height:1.5}
+  .section{padding:72px 6%}
+  .section-kicker{margin-bottom:34px}
+  .about-grid,.credentials-grid{grid-template-columns:1fr;gap:36px}
+  .about-image-area{width:92%;margin:auto;padding:0 18px 18px 0}
+  .about-image-area img{height:clamp(300px,95vw,430px)}
+  .about-copy h2,.section-heading h2,.approach-head h2,.credentials-intro h2,.contact-copy h2{font-size:clamp(36px,9vw,47px)}
+  .section-heading,.approach-head{display:block;margin-bottom:32px}
+  .section-heading>p,.approach-head>p{font-size:14px;margin-top:17px}
+  .service-intro-banner{grid-template-columns:1fr;margin:25px 0 32px;padding:13px;gap:14px}
+  .service-intro-banner img{height:clamp(190px,62vw,260px)}
+  .service-intro-banner>div{padding:5px 6px 10px}
+  .service-intro-banner p{font-size:13px}
+  .service-categories{grid-template-columns:1fr;gap:15px}
+  .service-category{padding:18px 16px 12px}
+  .category-header{gap:12px;align-items:flex-start}
+  .category-header h3{font-size:24px}
+  .category-header p{font-size:13px}
+  .service-detail summary{font-size:14px;min-height:60px;padding:16px 0}
+  .detail-plus{flex-basis:28px;width:28px;height:28px;margin-left:10px}
+  .detail-content{grid-template-columns:1fr;gap:13px}
+  .detail-content h4{font-size:10px}
+  .detail-content p{font-size:13px;line-height:1.75}
+  .detail-content .evidence-note{grid-column:auto;font-size:11px}
+  .evidence-disclaimer{padding:18px;margin:25px 0 40px}
+  .evidence-disclaimer p,.references>p{font-size:12px}
+  .references h3{font-size:27px}
+  .reference-links{grid-template-columns:1fr}
+  .reference-links a{font-size:12px;line-height:1.5}
+  .quote-band{padding:40px 6%;gap:8px}
+  .quote-band p{font-size:clamp(22px,6vw,29px)}
+  .values-grid{grid-template-columns:1fr 1fr;gap:24px 16px;margin-top:40px}
+  .value h3{font-size:19px}.value p{font-size:12px}
+  .credentials-intro img{width:100%;height:230px}
+  .timeline-entry h3{font-size:19px}.timeline-entry p{font-size:12px}
+  .contact-banner{grid-template-columns:1fr;margin:0 0 48px}
+  .contact-art{min-height:260px}
+  .contact-copy{padding:28px 7% 40px}
+  .footer{padding:0 6% 26px}
+  .footer-top{align-items:flex-start;flex-direction:column;gap:16px}
+  .footer-bottom{flex-direction:column;gap:14px;font-size:11px}
+  .footer-contact-links{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+  .footer-contact-links a{font-size:12px;overflow-wrap:anywhere}
+  .whatsapp-float{right:14px;bottom:calc(14px + env(safe-area-inset-bottom));width:54px;height:54px;padding:0;justify-content:center;border-radius:50%}
+  .whatsapp-float span{display:none}
+  :root[data-theme="dark"] .nav{background:var(--paper)}
+}
+@media(max-width:380px){.brand img{max-width:225px}.topline a{font-size:7px}.values-grid{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important}}
+.service-detail[open] .detail-plus{transform:none!important}

@@ -1,10 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 132" role="img" aria-labelledby="title desc">
-<title id="title">Jayce Xavier Ferraz</title><desc id="desc">Monograma J e F seguido do nome e das credenciais profissionais.</desc>
-<g fill="none" stroke="#b77d7c" stroke-width="1.7">
-<circle cx="61" cy="53" r="48"/>
-</g>
-<text x="61" y="75" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="57" fill="#895c5d">J</text>
-<text x="62" y="128" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="51" font-style="italic" fill="#895c5d">F</text>
+<title id="title">Jayce Xavier Ferraz</title><desc id="desc">Monograma JF e nome profissional.</desc>
+<circle cx="61" cy="59" r="48" fill="none" stroke="#b77d7c" stroke-width="1.7"/>
+<text x="61" y="76" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="43" letter-spacing="-5" fill="#895c5d">JF</text>
 <text x="145" y="48" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" letter-spacing="3.1" fill="#403633">JAYCE XAVIER FERRAZ</text>
 <text x="146" y="78" font-family="Arial, Helvetica, sans-serif" font-size="15" letter-spacing="2.05" fill="#887b73">FISIOTERAPEUTA PÉLVICA · ENFERMEIRA</text>
 </svg>
