@@ -3,17 +3,29 @@
   "trailingSlash": false,
   "headers": [
     {
-      "source": "/assets/images/social-preview-v2.jpg",
+      "source": "/assets/images/social-preview-v3.jpg",
       "headers": [
-        { "key": "Content-Type", "value": "image/jpeg" },
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" }
+        {
+          "key": "Content-Type",
+          "value": "image/jpeg"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
       ]
     },
     {
       "source": "/assets/favicon-32.png",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=604800" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800"
+        }
       ]
     }
   ]

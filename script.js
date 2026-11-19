@@ -54,6 +54,25 @@
     try { localStorage.setItem('jayce-theme', next); } catch (_) {}
   });
 
+
+  // The brand and footer controls always return to the absolute page start.
+  document.querySelectorAll('a[href="#top"], a.back-top').forEach(link => {
+    link.addEventListener('click', event => {
+      event.preventDefault();
+      closeMenu();
+      if (location.hash !== '#top') history.replaceState(null, '', location.pathname + location.search + '#top');
+      window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+    });
+  });
+
+  // Keep course accordions independent: readers may compare more than one course.
+  document.querySelectorAll('.course-item').forEach(item => {
+    item.addEventListener('toggle', () => {
+      const summary = item.querySelector('summary');
+      if (summary) summary.setAttribute('aria-expanded', String(item.open));
+    });
+  });
+
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 
