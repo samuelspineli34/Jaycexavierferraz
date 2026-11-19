@@ -601,3 +601,119 @@ body{font-size:16px;background:var(--paper);color:var(--ink)}
   .site-credit{padding-bottom:12px}
 }
 @media(prefers-reduced-motion:reduce){.whatsapp-float{transition:none}}
+
+/* =========================================
+   SOCIAL LINKS
+========================================= */
+
+.social-link,
+.footer-contact-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.social-icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.social-link,
+.footer-contact-links a {
+  transition: color .2s ease, opacity .2s ease;
+}
+
+.social-link:hover,
+.footer-contact-links a:hover {
+  color: var(--rose-dark);
+}
+
+.social-link:focus-visible,
+.footer-contact-links a:focus-visible,
+.crefito-link:focus-visible {
+  outline: 2px solid var(--rose);
+  outline-offset: 5px;
+}
+
+/* =========================================
+   CREFITO PROFESSIONAL REGISTRATION
+========================================= */
+
+.crefito-link {
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px 7px;
+  color: var(--ink);
+  text-decoration: none;
+  transition: color .2s ease;
+}
+
+.crefito-link svg {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
+  opacity: .7;
+}
+
+.crefito-link small {
+  width: 100%;
+  font-family: var(--sans);
+  font-size: 10px;
+  color: var(--muted);
+  letter-spacing: .04em;
+}
+
+.crefito-link:hover {
+  color: var(--rose-dark);
+}
+
+.crefito-link:hover small {
+  color: var(--rose-dark);
+}
+
+/* =========================================
+   WHATSAPP BUTTON
+========================================= */
+
+.whatsapp-float {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.whatsapp-float .social-icon {
+  width: 21px;
+  height: 21px;
+  flex-basis: 21px;
+}
+
+.button .social-icon {
+  width: 19px;
+  height: 19px;
+  flex-basis: 19px;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 760px) {
+  .social-icon {
+    width: 19px;
+    height: 19px;
+    flex-basis: 19px;
+  }
+
+  .crefito-link small {
+    font-size: 11px;
+  }
+
+  .footer-contact-links a {
+    min-height: 36px;
+  }
+}
