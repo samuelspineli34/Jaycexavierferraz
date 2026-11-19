@@ -555,3 +555,49 @@ body{font-size:16px;background:var(--paper);color:var(--ink)}
  .course-tags span{font-size:10px}
 }
 @media(prefers-reduced-motion:reduce){.hero-photo,.about-image-area img{transition:none!important}}
+
+
+/* UX polish: keep the floating WhatsApp action clear of the developer credit. */
+.whatsapp-float{
+  transition:opacity .22s ease, transform .22s ease, visibility .22s ease;
+  z-index:30;
+}
+.whatsapp-float.is-obscured{
+  opacity:0;
+  visibility:hidden;
+  pointer-events:none;
+  transform:translateY(10px);
+}
+.site-credit{
+  position:relative;
+  z-index:1;
+  max-width:100%;
+  padding:4px 0 8px;
+  line-height:1.7;
+}
+.site-credit a{display:inline-block;padding:2px 0;text-underline-offset:3px}
+
+/* Readability pass: raise microcopy sizes without making the layout heavy. */
+.eyebrow,.strip-label,.section-kicker,.timeline-date,.timeline-entry small,
+.detail-content h4,.detail-content .evidence-note,.evidence-disclaimer p,
+.references>p,.course-item summary small,.course-description small,
+.course-tags span,.image-label small{font-size:12px}
+.hero-note,.image-label,.category-header p,.detail-content p,
+.value p,.timeline-entry p,.courses-intro,.course-description p,
+.footer-contact-links a,.footer-bottom,.site-credit{font-size:14px}
+.service-detail summary,.course-item summary b{font-size:16px}
+.category-header h3{font-size:clamp(26px,2vw,31px)}
+.button,.text-link,.underlined-link,.nav-cta{font-size:14px}
+@media(max-width:760px){
+  .hero-text,.about-copy p,.section-heading>p,.approach-head>p,
+  .credentials-intro>p,.category-header p,.detail-content p,
+  .value p,.timeline-entry p,.course-description p,.courses-intro{font-size:15px;line-height:1.8}
+  .service-detail summary,.course-item summary b{font-size:15px}
+  .detail-content h4,.detail-content .evidence-note,.course-item summary small,
+  .course-description small,.timeline-date,.timeline-entry small,
+  .course-tags span,.image-label small{font-size:12px}
+  .footer-contact-links a,.footer-bottom,.site-credit{font-size:13px}
+  .button,.text-link,.underlined-link{font-size:14px}
+  .site-credit{padding-bottom:12px}
+}
+@media(prefers-reduced-motion:reduce){.whatsapp-float{transition:none}}

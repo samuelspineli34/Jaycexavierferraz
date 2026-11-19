@@ -73,6 +73,17 @@
     });
   });
 
+  // Hide the floating WhatsApp CTA while the footer is visible, so it never
+  // covers the discreet developer credit or the footer contact links.
+  const floatingWhatsApp = document.querySelector('.whatsapp-float');
+  const pageFooter = document.querySelector('.footer');
+  if (floatingWhatsApp && pageFooter && 'IntersectionObserver' in window) {
+    const footerObserver = new IntersectionObserver(([entry]) => {
+      floatingWhatsApp.classList.toggle('is-obscured', entry.isIntersecting);
+    }, { threshold: 0.04 });
+    footerObserver.observe(pageFooter);
+  }
+
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 
